@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "python-backend"
+version = "0.1.0"
+description = "Use python for backend"
+authors = ["Arif Nawaz"]
+readme = "README.md"
+packages = [{include = "python_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.95.1"
+pylint = "^2.17.3"
+uvicorn = "^0.22.0"
+alembic = "^1.10.4"
+black = "^23.3.0"
+psycopg2-binary = "^2.9.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pylint.basics]
+bad-names = ["foo", "bar", "toto"]
+docstring-min-length = -1
+good-names = ["i", "j", "run", "db", "id"]
+
+[tool.pylint."message control"]
+confidence = ["HIGH", "CONTROL_FLOW", "INFERENCE", "INFERENCE_FAILURE", "UNDEFINED"]
+
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "import-error",
+    "raw-checker-failed",
+    "not-callable",
+    "too-few-public-methods",
+    "unrecognized-option",
+    "import-error",
+    "no-name-in-module",
+    "broad-exception-caught"
+]
+
+[tool.pylint.main]
+fail-under = 10
+ignore = ["CSV"]
+py-version = "3.9"
+
+[tool.pylint.format]
+indent-after-paren = 4
+indent-string = "    "
+max-line-length = 120
+max-module-lines = 1000

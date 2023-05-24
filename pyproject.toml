@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Use python for backend"
 authors = ["Arif Nawaz"]
 readme = "README.md"
-packages = [{include = "python_backend"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
